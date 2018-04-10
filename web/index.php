@@ -1,5 +1,8 @@
 <?php
 
+	error_reporting(E_ALL);
+	ini_set("display_errors", true);
+
 	function getChallanDetails($vehicleNo) {
 
 		$vehicleN = trim(strtoupper($vehicleNo));
@@ -36,7 +39,7 @@
 		curl_setopt($ch, CURLOPT_REFERER, 'http://www.google.com');
 		curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate');
 		curl_setopt($ch, CURLOPT_AUTOREFERER, true);
-	
+
 		$output = curl_exec($ch);
 		$curl_getinfo = curl_getinfo($ch);
 
