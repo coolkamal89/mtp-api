@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "content-hash": "e66fd5c3f8342ff9ed1f0d21aab6ef81",
+    "packages": [],
     "packages-dev": [
         {
             "name": "heroku/heroku-buildpack-php",
