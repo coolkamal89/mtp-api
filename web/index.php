@@ -37,10 +37,9 @@
 					"challanNo" => $row["td"][0],
 					"challanDate" => trim($row["td"][1]),
 					"driverName" => isset($row["td"][2][0]) ? $row["td"][2][0] : "",
-					// "vehicleNo" => $row["td"][3],
 					"licenseNo" => $row["td"][4],
 					"amount" => floatval($row["td"][5]),
-					"paid" => (isset($row["td"][7]["span"]) && $row["td"][7]["span"] != "Pay Now") ? true : false
+					"paid" => (!isset($row["td"][7]["span"]) || $row["td"][7]["span"] != "Pay Now")
 				);
 
 				if ($item["paid"]) {
@@ -77,5 +76,6 @@
 
 		// Loop through the array
 		// Call
+		// Fill in the blanks here to complete the code
 	}
 ?>
