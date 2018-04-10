@@ -22,7 +22,7 @@
 		$header[] = "Accept-Language: en-us,en;q=0.5";
 		$header[] = "Pragma: ";
 
-		curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36");
+		// curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36");
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
 		curl_setopt($ch, CURLOPT_URL, "http://mumbaipolice.in.net/payechallan/PaymentService.htm");
 		curl_setopt($ch, CURLOPT_COOKIEJAR, __DIR__ . "/cookies/" . $vehicleNo . ".txt");
@@ -32,10 +32,10 @@
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 2);
 
-		// curl_setopt($curl, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.15) Gecko/20080623 Firefox/2.0.0.15');
-		// curl_setopt($curl, CURLOPT_REFERER, 'http://www.google.com');
-		// curl_setopt($curl, CURLOPT_ENCODING, 'gzip,deflate');
-		// curl_setopt($curl, CURLOPT_AUTOREFERER, true);
+		curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.15) Gecko/20080623 Firefox/2.0.0.15');
+		curl_setopt($ch, CURLOPT_REFERER, 'http://www.google.com');
+		curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate');
+		curl_setopt($ch, CURLOPT_AUTOREFERER, true);
 	
 		$output = curl_exec($ch);
 		$curl_getinfo = curl_getinfo($ch);
