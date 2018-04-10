@@ -1,6 +1,17 @@
 <?php
 
 	function getChallanDetails($vehicleNo) {
+
+		$vehicleN = trim(strtoupper($vehicleNo));
+
+		if (!preg_match("/^[a-zA-Z]{2}[a-zA-Z0-9]{0,6}[0-9]{3}$/", $vehicleNo, $match)) {
+			return array(
+				"success" => false,
+				"message" => "Invalid Vehicle Number entered!",
+				"data" => json_decode("{}", false)
+			);
+		}
+
 		$ch = curl_init();
 
 		curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36");
