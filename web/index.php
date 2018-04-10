@@ -14,7 +14,16 @@
 
 		$ch = curl_init();
 
+		$header[] = "Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5";
+		$header[] = "Cache-Control: max-age=0";
+		$header[] = "Connection: keep-alive";
+		$header[] = "Keep-Alive: 300";
+		$header[] = "Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7";
+		$header[] = "Accept-Language: en-us,en;q=0.5";
+		$header[] = "Pragma: ";
+		
 		curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36");
+		curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
 		curl_setopt($ch, CURLOPT_URL, "http://mumbaipolice.in.net/payechallan/PaymentService.htm");
 		curl_setopt($ch, CURLOPT_COOKIEJAR, __DIR__ . "/cookies/" . $vehicleNo . ".txt");
 		curl_setopt($ch, CURLOPT_HEADER, 0);
