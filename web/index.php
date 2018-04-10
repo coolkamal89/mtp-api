@@ -15,7 +15,7 @@
 
 		curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36");
 		curl_setopt($ch, CURLOPT_URL, "http://mumbaipolice.in.net/payechallan/PaymentService.htm");
-		curl_setopt($ch, CURLOPT_COOKIEJAR, dirname(__FILE__) . "/" . $vehicleNo . ".txt");
+		curl_setopt($ch, CURLOPT_COOKIEJAR, dirname(__FILE__) . "/cookies/" . $vehicleNo . ".txt");
 		curl_setopt($ch, CURLOPT_HEADER, 0);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
